@@ -16,14 +16,22 @@ public class Homework3 {
 
         int clientDeviceYear = 2015;
 
-        if (clientOS == 1 && clientDeviceYear >= 2015) {
+        boolean isIos = clientOS ==0;
+        boolean isLiteNeeded = clientDeviceYear < 2019;
+
+        if (isIos) {
+            if (isLiteNeeded) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < 2015) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear >= 2015) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            if (isLiteNeeded) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            }
         }
 
         //Задание 3
@@ -39,17 +47,18 @@ public class Homework3 {
         //Задание 4
 
         int deliveryDistance = 95;
-        int dayQuantity = 1;
+        int dayQuantity;
 
-        if (deliveryDistance < 20) {
-            dayQuantity += 0;
-        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            dayQuantity += 1;
+        if (deliveryDistance >= 20 && deliveryDistance < 60) {
+            dayQuantity= 1 + ((deliveryDistance - 20)/40);
         } else if (deliveryDistance >= 60 && deliveryDistance < 100) {
-            dayQuantity += 2;
+            dayQuantity= 1 + ((deliveryDistance - 20)/40);
         } else {
-            dayQuantity += 3;
+            dayQuantity= 1 + ((deliveryDistance - 20)/40);
+
         }
+
+        dayQuantity= 1 + ((deliveryDistance - 20)/40);
         System.out.println("Потребуется дней: " + dayQuantity);
 
 
