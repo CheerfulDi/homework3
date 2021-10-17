@@ -47,18 +47,15 @@ public class Homework3 {
         //Задание 4
 
         int deliveryDistance = 95;
-        int dayQuantity;
+        int dayQuantity = 1;
 
-        if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            dayQuantity= 1 + ((deliveryDistance - 20)/40);
-        } else if (deliveryDistance >= 60 && deliveryDistance < 100) {
-            dayQuantity= 1 + ((deliveryDistance - 20)/40);
-        } else {
-            dayQuantity= 1 + ((deliveryDistance - 20)/40);
-
+        if (deliveryDistance >= 20) {
+            dayQuantity += 1 ;
+        }
+        if (deliveryDistance > 60 && deliveryDistance < 100) {
+            dayQuantity += 1;
         }
 
-        dayQuantity= 1 + ((deliveryDistance - 20)/40);
         System.out.println("Потребуется дней: " + dayQuantity);
 
 
@@ -124,7 +121,7 @@ public class Homework3 {
             basicRate += 0.5f;
         }
         if (salary2 > 80_000) {
-            basicRate = basicRate-0.7f;
+            basicRate -= 0.7f;
         }
 
         float loanSum = (wantedSum+(wantedSum*(basicRate/100)));
